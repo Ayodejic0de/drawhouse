@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas House Drawing</title>
+</head>
+<body>
+<canvas id="houseCanvas" width="500" height="400" style="border:1px solid #000000;"></canvas>
+
+<script>
+    const canvas = document.getElementById('houseCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Draw House Base (Rectangle)
+    ctx.fillStyle = '#8B4513'; // Brown
+    ctx.fillRect(150, 150, 200, 150); // x, y, width, height
+
+    // Draw Roof (Triangle)
+    ctx.beginPath();
+    ctx.moveTo(140, 150); // Left corner
+    ctx.lineTo(260, 70);  // Top peak
+    ctx.lineTo(360, 150); // Right corner
+    ctx.closePath();
+    ctx.fillStyle = '#A52A2A'; // Dark Red
+    ctx.fill();
+
+    // Draw Door
+    ctx.fillStyle = '#654321'; // Dark Brown
+    ctx.fillRect(230, 220, 40, 80); // x, y, width, height
+
+    // Draw Left Window
+    ctx.fillStyle = '#ADD8E6'; // Light Blue
+    ctx.fillRect(170, 170, 40, 40);
+
+    // Draw Right Window
+    ctx.fillRect(290, 170, 40, 40);
+
+    // Window Grids (Left Window)
+    ctx.strokeStyle = '#000000'; // Black
+    ctx.beginPath();
+    ctx.moveTo(170, 190);
+    ctx.lineTo(210, 190);
+    ctx.moveTo(190, 170);
+    ctx.lineTo(190, 210);
+    ctx.stroke();
+
+    // Window Grids (Right Window)
+    ctx.beginPath();
+    ctx.moveTo(290, 190);
+    ctx.lineTo(330, 190);
+    ctx.moveTo(310, 170);
+    ctx.lineTo(310, 210);
+    ctx.stroke();
+
+</script>
+</body>
+</html>
